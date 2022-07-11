@@ -7,7 +7,7 @@ import Twilio from "twilio";
 const { encrypt, decrypt } = encryptionSdk.buildClient(
   encryptionSdk.CommitmentPolicy.REQUIRE_ENCRYPT_ALLOW_DECRYPT
 );
-const keyIds = [process.env.KEY_ID];
+const keyIds = [process.env.KEY_ARN];
 const keyring = new encryptionSdk.KmsKeyringNode({ keyIds });
 
 // retrieve twilio token
