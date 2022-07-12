@@ -22,7 +22,7 @@ Sample implementation for sending MFA OTP messages from AWS Cognito with Twilio 
     ```bash
     aws lambda add-permission --function-name YOUR_LAMBDA_ARN --statement-id "CognitoLambdaInvokeAccess" --action lambda:InvokeFunction --principal cognito-idp.amazonaws.com
     ```
-7. Update the user pool and set its custom sender trigger to the lambda function:
+7. Update your user pool and set its custom sender trigger to the lambda function:
     ```bash
     aws cognito-idp update-user-pool --user-pool-id YOUR_USER_POOL_ID --lambda-config "CustomSMSSender={LambdaVersion=V1_0,LambdaArn= YOUR_LAMBDA_ARN },KMSKeyID= YOUR_KMS_KEY_ARN"
     ```
