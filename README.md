@@ -8,7 +8,7 @@ Sample implementation for sending MFA OTP messages from AWS Cognito with Twilio 
 
 The setup of this solution involves configuring a custom SMS sender lambda function for a Cognito User Pool. For a more in-depth walkthrough, please refer to the [AWS documentation].(https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-custom-sms-sender.html).
 
-1. Create a Twilio messaging service and add some phone numbers to its sender pool. The service will be used to send the text messages.
+1. Create a [Twilio Messaging Service](https://www.twilio.com/docs/messaging/services) and add some phone numbers to its sender pool. The service will be used to send the text messages.
 2. Create a lambda function from the files in the `CustomSMSSenderLambda` directory.
 3. Create a symmetric KMS key. This will be used by Cognito to encrypt the OTP messages. Make sure to add the lambda execution role as a key user so the function can decrypt the code before sending it to the user.
 4. Create a Secret Manager secret for storing the Twilio auth token.
