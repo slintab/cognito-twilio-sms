@@ -1,4 +1,4 @@
-# cognito-twilio-sms
+# Integrating AWS Cognito with Twilio SMS
 Sample implementation for sending MFA OTP messages from AWS Cognito with Twilio SMS.
 
 ## Architecture
