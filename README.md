@@ -1,5 +1,9 @@
 # Integrating AWS Cognito with Twilio SMS
-Sample implementation for sending MFA OTP messages from AWS Cognito with Twilio SMS.
+Sample implementation for sending MFA OTP messages from AWS Cognito with Twilio SMS. The solution uses the [CustomSMSSender](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-custom-sms-sender.html) feature. This options is currently only available via the API, and is not yet supported by the AWS console. 
+
+In this scenario Cognito handles the code generation as well as the verification; and then it invokes a lambda which in turn calls Twilio SMS to send the code to the user. 
+
+The solution is compatible the Cognito Hosted UI.
 
 ## Architecture
 ![Architecture Diagram](./architecture.png?raw=true)
